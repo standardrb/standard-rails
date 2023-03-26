@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    standard-rails (0.1.0)
-      rubocop-rails (= 2.18.0)
+    standard-rails (0.0.1)
+      rubocop-rails (~> 2.18.0)
 
 GEM
   remote: https://rubygems.org/
