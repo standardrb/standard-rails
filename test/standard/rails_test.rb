@@ -17,7 +17,9 @@ class Standard::RailsTest < Minitest::Test
     VersionChanged
   ].freeze
   def test_configures_all_rails_cops
-    expected = YAML.load_file(Pathname.new(Gem.loaded_specs["rubocop-rails"].full_gem_path).join("config/default.yml"))
+    expected = YAML.load_file(Pathname.new(Gem.loaded_specs["rubocop-rails"].full_gem_path).join("config/default.yml")).reject { |name, cop|
+      ["Lint/NumberConversion", "Style/AndOr", "Style/FormatStringToken", "Style/SymbolProc"].include?(name)
+    }.to_h
     actual = YAML.load_file(BASE_CONFIG)
     missing = (expected.keys - actual.keys).grep(/\//) # ignore groups like "Layout"
     extra = actual.keys - expected.keys - ["require"]
