@@ -1116,10 +1116,3 @@ Rails/WhereNotWithMultipleConditions:
   Severity: warning
   VersionAdded: '2.17'
   VersionChanged: '2.18'
-
-Style/SymbolProc:
-  AllowedMethods:
-    - define_method
-    - mail
-    - respond_to
-
