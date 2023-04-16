@@ -1117,10 +1117,6 @@ Rails/WhereNotWithMultipleConditions:
   VersionAdded: '2.17'
   VersionChanged: '2.18'
 
-Style/FormatStringToken:
-  AllowedMethods:
-    - redirect
-
 Style/SymbolProc:
   AllowedMethods:
     - define_method
