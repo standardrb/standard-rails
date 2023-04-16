@@ -19,28 +19,6 @@ AllCops:
   # as the default.
   TargetRailsVersion: ~
 
-Lint/NumberConversion:
-  # Add Rails' duration methods to the ignore list for `Lint/NumberConversion`
-  # so that calling `to_i` on one of these does not register an offense.
-  # See: https://github.com/rubocop/rubocop/issues/8950
-  AllowedMethods:
-    - ago
-    - from_now
-    - second
-    - seconds
-    - minute
-    - minutes
-    - hour
-    - hours
-    - day
-    - days
-    - week
-    - weeks
-    - fortnight
-    - fortnights
-    - in_milliseconds
-  AllowedPatterns: []
-
 Rails:
   Enabled: true
   DocumentationBaseURL: https://docs.rubocop.org/rubocop-rails
