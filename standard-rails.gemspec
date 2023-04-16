@@ -16,6 +16,8 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
 
+  spec.metadata["default_lint_roller_plugin"] = "Standard::Rails::Plugin"
+
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir.chdir(__dir__) do
@@ -27,5 +29,6 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rubocop-rails", "~> 2.18.0"
+  spec.add_dependency "lint_roller", "~> 1.0"
+  spec.add_dependency "rubocop-rails", "~> 2.19.0"
 end
