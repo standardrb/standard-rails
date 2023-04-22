@@ -6,15 +6,29 @@ plugin configuration for the
 as an extension to the [Standard Ruby
 gem](https://github.com/standardrb/standard).
 
+To install it, you'll want to start by adding it to your Gemfile:
+
+```ruby
+gem "standard-rails"
+```
+
 ## Configuration
 
-If you're using Standard, the plugin is configured in your `.standard.yml` as a
-hash that nests beneath the `standard-rails` array element:
+In your `.standard.yml` file, you can simply list `standard-rails` as a plugin:
 
 ```yaml
 plugins:
-  standard-rails:
-    target_rails_version: 7.0
+  - standard-rails
+```
+
+Even though it'll usually be inferred automatically, you can specify the exact
+version of Rails you want the rules to run against by converting the string to
+a nested hash:
+
+```yaml
+plugins:
+  - standard-rails:
+      target_rails_version: 7.0
 ```
 
 ## Code of Conduct
