@@ -54,8 +54,22 @@ module Standard
       # meant to be mutated externally, but it's better than the `Inject` monkey
       # patching that rubocop-rails does (and many other RuboCop plugins do)
       def trick_rubocop_into_thinking_we_required_rubocop_rails!
-        require_relative "load_rubocop_rails_without_the_monkey_patch"
+        without_warnings do
+          require_relative "load_rubocop_rails_without_the_monkey_patch"
+        end
         RuboCop::ConfigLoader.default_configuration.loaded_features.add("rubocop-rails")
+      end
+
+      # This is also not fantastic, but because loading RuboCop before loading
+      # ActiveSupport will result in RuboCop redefining a number of ActiveSupport
+      # methods like String#blank?, we need to suppress the warnings that are
+      # emitted when we load the cops.
+      def without_warnings(&blk)
+        original_verbose = $VERBOSE
+        $VERBOSE = nil
+        yield
+      ensure
+        $VERBOSE = original_verbose
       end
     end
   end
