@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    standard-rails (0.0.1)
+    standard-rails (0.1.0)
       lint_roller (~> 1.0)
       rubocop-rails (~> 2.19.0)
 
