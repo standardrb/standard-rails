@@ -28,6 +28,7 @@ Rails/ActionControllerFlashBeforeRender:
   VersionAdded: '2.16'
 
 Rails/ActionControllerTestCase:
+  Enabled: false
   Description: 'Use `ActionDispatch::IntegrationTest` instead of `ActionController::TestCase`.'
   StyleGuide: 'https://rails.rubystyle.guide/#integration-testing'
   Reference: 'https://api.rubyonrails.org/classes/ActionController/TestCase.html'
@@ -48,6 +49,7 @@ Rails/ActionFilter:
     - app/mailers/**/*.rb
 
 Rails/ActionOrder:
+  Enabled: false
   Description: 'Enforce consistent ordering of controller actions.'
   VersionAdded: '2.17'
   ExpectedOrder:
@@ -77,6 +79,7 @@ Rails/ActiveRecordCallbacksOrder:
     - app/models/**/*.rb
 
 Rails/ActiveRecordOverride:
+  Enabled: true
   Description: >-
                   Check for overriding Active Record methods instead of using
                   callbacks.
@@ -87,6 +90,7 @@ Rails/ActiveRecordOverride:
     - app/models/**/*.rb
 
 Rails/ActiveSupportAliases:
+  Enabled: false
   Description: >-
                   Avoid ActiveSupport aliases of standard ruby methods:
                   `String#starts_with?`, `String#ends_with?`,
@@ -118,24 +122,28 @@ Rails/AfterCommitOverride:
   VersionAdded: '2.8'
 
 Rails/ApplicationController:
+  Enabled: true
   Description: 'Check that controllers subclass ApplicationController.'
   SafeAutoCorrect: false
   VersionAdded: '2.4'
   VersionChanged: '2.5'
 
 Rails/ApplicationJob:
+  Enabled: true
   Description: 'Check that jobs subclass ApplicationJob.'
   SafeAutoCorrect: false
   VersionAdded: '0.49'
   VersionChanged: '2.5'
 
 Rails/ApplicationMailer:
+  Enabled: true
   Description: 'Check that mailers subclass ApplicationMailer.'
   SafeAutoCorrect: false
   VersionAdded: '2.4'
   VersionChanged: '2.5'
 
 Rails/ApplicationRecord:
+  Enabled: true
   Description: 'Check that models subclass ApplicationRecord.'
   SafeAutoCorrect: false
   VersionAdded: '0.49'
@@ -159,6 +167,7 @@ Rails/AttributeDefaultBlockValue:
     - 'app/models/**/*'
 
 Rails/BelongsTo:
+  Enabled: true
   Description: >-
                   Use `optional: true` instead of `required: false` for
                   `belongs_to` relations.
@@ -168,6 +177,7 @@ Rails/BelongsTo:
   VersionAdded: '0.62'
 
 Rails/Blank:
+  Enabled: true
   Description: 'Enforces use of `blank?`.'
   SafeAutoCorrect: false
   VersionAdded: '0.48'
@@ -213,6 +223,7 @@ Rails/ContentTag:
     - config/**/*.rb
 
 Rails/CreateTableWithTimestamps:
+  Enabled: true
   Description: >-
                   Checks the migration for which timestamps are not included
                   when creating a new table.
@@ -225,6 +236,7 @@ Rails/CreateTableWithTimestamps:
     - db/migrate/*_create_active_storage_tables.active_storage.rb
 
 Rails/Date:
+  Enabled: true
   Description: >-
                   Checks the correct usage of date aware methods,
                   such as Date.today, Date.current etc.
@@ -328,6 +340,7 @@ Rails/EnvironmentComparison:
   VersionAdded: '0.52'
 
 Rails/EnvironmentVariableAccess:
+  Enabled: true
   Description: 'Do not access `ENV` directly after initialization.'
   # TODO: Set to `pending` status in RuboCop Rails 2 series when migration doc will be written.
   VersionAdded: '2.10'
@@ -400,6 +413,7 @@ Rails/FindEach:
   AllowedPatterns: []
 
 Rails/FreezeTime:
+  Enabled: false
   Description: 'Prefer `freeze_time` over `travel_to` with an argument of the current time.'
   StyleGuide: 'https://rails.rubystyle.guide/#freeze-time'
   VersionAdded: '2.16'
@@ -433,6 +447,7 @@ Rails/HttpPositionalArguments:
     - 'test/**/*'
 
 Rails/HttpStatus:
+  Enabled: false
   Description: 'Enforces use of symbolic or numeric value to define HTTP status.'
   VersionAdded: '0.54'
   VersionChanged: '2.11'
@@ -658,6 +673,7 @@ Rails/RedundantForeignKey:
   VersionAdded: '2.6'
 
 Rails/RedundantPresenceValidationOnBelongsTo:
+  Enabled: true
   Description: 'Checks for redundant presence validation on belongs_to association.'
   SafeAutoCorrect: false
   VersionAdded: '2.13'
@@ -761,6 +777,7 @@ Rails/RootPublicPath:
   VersionAdded: '2.15'
 
 Rails/SafeNavigation:
+  Enabled: true
   Description: "Use Ruby's safe navigation operator (`&.`) instead of `try!`."
   VersionAdded: '0.43'
   # This will convert usages of `try` to use safe navigation as well as `try!`.
@@ -770,6 +787,7 @@ Rails/SafeNavigation:
   ConvertTry: false
 
 Rails/SafeNavigationWithBlank:
+  Enabled: true
   Description: 'Avoid `foo&.blank?` in conditionals.'
   VersionAdded: '2.4'
   # While the safe navigation operator is generally a good idea, when
@@ -796,6 +814,7 @@ Rails/SchemaComment:
   VersionAdded: '2.13'
 
 Rails/ScopeArgs:
+  Enabled: true
   Description: 'Checks the arguments of ActiveRecord scopes.'
   VersionAdded: '0.19'
   VersionChanged: '2.12'
@@ -849,6 +868,7 @@ Rails/SquishedSQLHeredocs:
   SafeAutoCorrect: false
 
 Rails/StripHeredoc:
+  Enabled: true
   Description: 'Enforces the use of squiggly heredoc over `strip_heredoc`.'
   StyleGuide: 'https://rails.rubystyle.guide/#prefer-squiggly-heredoc'
   VersionAdded: '2.15'
@@ -862,6 +882,7 @@ Rails/TableNameAssignment:
     - app/models/**/*.rb
 
 Rails/ThreeStateBooleanColumn:
+  Enabled: true
   Description: 'Add a default value and a `NOT NULL` constraint to boolean columns.'
   StyleGuide: 'https://rails.rubystyle.guide/#three-state-boolean'
   VersionAdded: '2.19'
@@ -885,6 +906,7 @@ Rails/TimeZone:
     - '**/*.gemspec'
 
 Rails/TimeZoneAssignment:
+  Enabled: true
   Description: 'Prefer the usage of `Time.use_zone` instead of manually updating `Time.zone` value.'
   Reference: 'https://thoughtbot.com/blog/its-about-time-zones'
   VersionAdded: '2.10'
@@ -907,6 +929,7 @@ Rails/ToSWithArgument:
   VersionAdded: '2.16'
 
 Rails/TopLevelHashWithIndifferentAccess:
+  Enabled: false
   Description: 'Identifies top-level `HashWithIndifferentAccess`.'
   Reference: 'https://guides.rubyonrails.org/upgrading_ruby_on_rails.html#top-level-hashwithindifferentaccess-is-soft-deprecated'
   Severity: warning
@@ -920,6 +943,7 @@ Rails/TransactionExitStatement:
   VersionAdded: '2.14'
 
 Rails/UniqBeforePluck:
+  Enabled: true
   Description: 'Prefer the use of uniq or distinct before pluck.'
   VersionAdded: '0.40'
   VersionChanged: '2.13'
@@ -946,6 +970,7 @@ Rails/UnknownEnv:
     - production
 
 Rails/UnusedIgnoredColumns:
+  Enabled: true
   Description: 'Remove a column that does not exist from `ignored_columns`.'
   VersionAdded: '2.11'
   Include:
@@ -976,11 +1001,13 @@ Rails/WhereExists:
   VersionChanged: '2.10'
 
 Rails/WhereMissing:
+  Enabled: true
   Description: 'Use `where.missing(...)` to find missing relationship records.'
   StyleGuide: 'https://rails.rubystyle.guide/#finding-missing-relationship-records'
   VersionAdded: '2.16'
 
 Rails/WhereNot:
+  Enabled: true
   Description: 'Use `where.not(...)` instead of manually constructing negated SQL in `where`.'
   StyleGuide: 'https://rails.rubystyle.guide/#hash-conditions'
   VersionAdded: '2.8'
