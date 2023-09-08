@@ -7,7 +7,7 @@
 # of RuboCop built-in cops in this file, we need to monitor it for changes
 # in rubocop-rails and keep it up to date.
 #
-# Last updated from rubocop-rails v2.19.1
+# Last updated from rubocop-rails v2.20.2
 
 # frozen_string_literal: true
 
