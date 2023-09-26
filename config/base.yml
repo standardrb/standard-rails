@@ -164,6 +164,8 @@ Rails/ApplicationRecord:
   SafeAutoCorrect: false
   VersionAdded: '0.49'
   VersionChanged: '2.5'
+  Exclude:
+    - db/migrate/*.rb
 
 Rails/ArelStar:
   Enabled: false
