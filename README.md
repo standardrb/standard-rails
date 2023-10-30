@@ -31,6 +31,21 @@ plugins:
       target_rails_version: 7.0
 ```
 
+### Rubocop
+
+If you're using Rubocop, you'll want to inherit from the `standard-rails` gem in your `rubocop.yml` file. Here's an example:
+
+```yaml
+require:
+  - rubocop-rails
+  - standard
+  - standard-rails
+
+inherit_gem:
+  standard: config/base.yml
+  standard-rails: config/base.yml
+```
+
 ## Code of Conduct
 
 This project follows Test Double's [code of
