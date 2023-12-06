@@ -9,7 +9,7 @@ gem](https://github.com/standardrb/standard).
 To install it, you'll want to start by adding it to your Gemfile:
 
 ```ruby
-gem "standard-rails"
+gem "standard-rails", group: [:development, :test]
 ```
 
 ## Configuration
