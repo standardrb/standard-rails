@@ -31,4 +31,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "lint_roller", "~> 1.0"
   spec.add_dependency "rubocop-rails", "~> 2.20.2"
+  spec.add_dependency "standard", "~> 1.32.1"
 end
