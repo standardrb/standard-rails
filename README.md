@@ -6,24 +6,29 @@ plugin configuration for the
 as an extension to the [Standard Ruby
 gem](https://github.com/standardrb/standard).
 
-To install it, you'll want to start by adding it to your Gemfile:
+## Usage
+
+First, if you haven't already, get your app set up to [run with the `standard` 
+gem](https://github.com/standardrb/standard#usage)
+
+Next, to add the `standard-rails` plugin, you'll want to start by adding it to your Gemfile:
 
 ```ruby
 gem "standard-rails", group: [:development, :test]
 ```
 
-## Configuration
-
-In your `.standard.yml` file, you can simply list `standard-rails` as a plugin:
+Next, in your [`.standard.yml` file](https://github.com/standardrb/standard#yaml-options), 
+list `standard-rails` as a plugin:
 
 ```yaml
 plugins:
   - standard-rails
 ```
 
+## Configuration
+
 Even though it'll usually be inferred automatically, you can specify the exact
-version of Rails you want the rules to run against by converting the string to
-a nested hash:
+version of Rails you want the rules to be run against like this:
 
 ```yaml
 plugins:
