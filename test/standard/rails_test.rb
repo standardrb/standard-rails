@@ -55,6 +55,16 @@ class Standard::RailsTest < Minitest::Test
     assert_equal actual, expected, "Cop names should be alphabetized! (See this script to do it for you: https://github.com/testdouble/standard/pull/222#issue-744335213 )"
   end
 
+  def test_merges_in_the_metadata_from_rubocop_performance
+    owned_yaml = YAML.load_file(BASE_CONFIG)
+    @subject = Standard::Rails::Plugin.new({})
+
+    rules = @subject.rules(LintRoller::Context.new(target_ruby_version: RUBY_VERSION))
+
+    assert_nil owned_yaml["Rails/ActionControllerFlashBeforeRender"]["Description"], "The description should be inherited from rubocop-rails"
+    assert_equal "Use `ActionDispatch::IntegrationTest` instead of `ActionController::TestCase`.", rules.value["Rails/ActionControllerTestCase"]["Description"]
+  end
+
   private
 
   def to_indented_yaml(cop_hash, without_keys = [])

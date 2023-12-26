@@ -5,6 +5,7 @@ module Standard
     class Plugin < LintRoller::Plugin
       def initialize(config)
         @config = config
+        @merges_upstream_metadata = LintRoller::Support::MergesUpstreamMetadata.new
       end
 
       def about
@@ -33,11 +34,14 @@ module Standard
       private
 
       def rules_with_config_applied
-        YAML.load_file(Pathname.new(__dir__).join("../../../config/base.yml")).tap do |rules|
-          if @config.key?("target_rails_version")
-            rules["AllCops"]["TargetRailsVersion"] = @config["target_rails_version"]
-          end
-        end
+        @merges_upstream_metadata.merge(
+          YAML.load_file(Pathname.new(__dir__).join("../../../config/base.yml")).tap do |rules|
+            if @config.key?("target_rails_version")
+              rules["AllCops"]["TargetRailsVersion"] = @config["target_rails_version"]
+            end
+          end,
+          YAML.load_file(Pathname.new(Gem.loaded_specs["rubocop-rails"].full_gem_path).join("config/default.yml"))
+        )
       end
 
       # This is not fantastic.

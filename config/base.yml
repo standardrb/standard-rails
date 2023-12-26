@@ -33,13 +33,11 @@ Rails:
 
 Rails/ActionControllerFlashBeforeRender:
   Enabled: false
-  Description: 'Use `flash.now` instead of `flash` before `render`.'
   SafeAutoCorrect: false
   VersionAdded: '2.16'
 
 Rails/ActionControllerTestCase:
   Enabled: false
-  Description: 'Use `ActionDispatch::IntegrationTest` instead of `ActionController::TestCase`.'
   StyleGuide: 'https://rails.rubystyle.guide/#integration-testing'
   Reference: 'https://api.rubyonrails.org/classes/ActionController/TestCase.html'
   SafeAutoCorrect: false
@@ -49,7 +47,6 @@ Rails/ActionControllerTestCase:
 
 Rails/ActionFilter:
   Enabled: false
-  Description: 'Enforces consistent use of action filter methods.'
   VersionAdded: '0.19'
   EnforcedStyle: action
   SupportedStyles:
@@ -61,7 +58,6 @@ Rails/ActionFilter:
 
 Rails/ActionOrder:
   Enabled: false
-  Description: 'Enforce consistent ordering of controller actions.'
   VersionAdded: '2.17'
   ExpectedOrder:
     - index
@@ -76,16 +72,11 @@ Rails/ActionOrder:
 
 Rails/ActiveRecordAliases:
   Enabled: false
-  Description: >-
-                  Avoid Active Record aliases:
-                  Use `update` instead of `update_attributes`.
-                  Use `update!` instead of `update_attributes!`.
   VersionAdded: '0.53'
   SafeAutoCorrect: false
 
 Rails/ActiveRecordCallbacksOrder:
   Enabled: false
-  Description: 'Order callback declarations in the order in which they will be executed.'
   StyleGuide: 'https://rails.rubystyle.guide/#callbacks-order'
   VersionAdded: '2.7'
   Include:
@@ -93,9 +84,6 @@ Rails/ActiveRecordCallbacksOrder:
 
 Rails/ActiveRecordOverride:
   Enabled: true
-  Description: >-
-                  Check for overriding Active Record methods instead of using
-                  callbacks.
   Severity: warning
   VersionAdded: '0.67'
   VersionChanged: '2.18'
@@ -104,15 +92,10 @@ Rails/ActiveRecordOverride:
 
 Rails/ActiveSupportAliases:
   Enabled: false
-  Description: >-
-                  Avoid ActiveSupport aliases of standard ruby methods:
-                  `String#starts_with?`, `String#ends_with?`,
-                  `Array#append`, `Array#prepend`.
   VersionAdded: '0.48'
 
 Rails/ActiveSupportOnLoad:
   Enabled: false
-  Description: 'Use `ActiveSupport.on_load(...)` to patch Rails framework classes.'
   Reference:
     - 'https://api.rubyonrails.org/classes/ActiveSupport/LazyLoadHooks.html'
     - 'https://guides.rubyonrails.org/engines.html#available-load-hooks'
@@ -121,46 +104,34 @@ Rails/ActiveSupportOnLoad:
 
 Rails/AddColumnIndex:
   Enabled: false
-  Description: >-
-    Rails migrations don't make use of a given `index` key, but also
-    doesn't given an error when it's used, so it makes it seem like an
-    index might be used.
   VersionAdded: '2.11'
   Include:
     - db/migrate/*.rb
 
 Rails/AfterCommitOverride:
   Enabled: false
-  Description: >-
-                  Enforces that there is only one call to `after_commit`
-                  (and its aliases - `after_create_commit`, `after_update_commit`,
-                  and `after_destroy_commit`) with the same callback name per model.
   VersionAdded: '2.8'
 
 Rails/ApplicationController:
   Enabled: true
-  Description: 'Check that controllers subclass ApplicationController.'
   SafeAutoCorrect: false
   VersionAdded: '2.4'
   VersionChanged: '2.5'
 
 Rails/ApplicationJob:
   Enabled: true
-  Description: 'Check that jobs subclass ApplicationJob.'
   SafeAutoCorrect: false
   VersionAdded: '0.49'
   VersionChanged: '2.5'
 
 Rails/ApplicationMailer:
   Enabled: true
-  Description: 'Check that mailers subclass ApplicationMailer.'
   SafeAutoCorrect: false
   VersionAdded: '2.4'
   VersionChanged: '2.5'
 
 Rails/ApplicationRecord:
   Enabled: true
-  Description: 'Check that models subclass ApplicationRecord.'
   SafeAutoCorrect: false
   VersionAdded: '0.49'
   VersionChanged: '2.5'
@@ -169,29 +140,23 @@ Rails/ApplicationRecord:
 
 Rails/ArelStar:
   Enabled: false
-  Description: 'Enforces `Arel.star` instead of `"*"` for expanded columns.'
   SafeAutoCorrect: false
   VersionAdded: '2.9'
 
 Rails/AssertNot:
   Enabled: false
-  Description: 'Use `assert_not` instead of `assert !`.'
   VersionAdded: '0.56'
   Include:
     - '**/test/**/*'
 
 Rails/AttributeDefaultBlockValue:
   Enabled: false
-  Description: 'Pass method call in block for attribute option `default`.'
   VersionAdded: '2.9'
   Include:
     - 'app/models/**/*'
 
 Rails/BelongsTo:
   Enabled: true
-  Description: >-
-                  Use `optional: true` instead of `required: false` for
-                  `belongs_to` relations.
   Reference:
     - https://guides.rubyonrails.org/5_0_release_notes.html
     - https://github.com/rails/rails/pull/18937
@@ -199,7 +164,6 @@ Rails/BelongsTo:
 
 Rails/Blank:
   Enabled: true
-  Description: 'Enforces use of `blank?`.'
   SafeAutoCorrect: false
   VersionAdded: '0.48'
   VersionChanged: '2.10'
@@ -212,7 +176,6 @@ Rails/Blank:
 
 Rails/BulkChangeTable:
   Enabled: false
-  Description: 'Check whether alter queries are combinable.'
   Reference:
     - https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_table
     - https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/Table.html
@@ -226,13 +189,11 @@ Rails/BulkChangeTable:
 
 Rails/CompactBlank:
   Enabled: false
-  Description: 'Checks if collection can be blank-compacted with `compact_blank`.'
   Safe: false
   VersionAdded: '2.13'
 
 Rails/ContentTag:
   Enabled: false
-  Description: 'Use `tag.something` instead of `tag(:something)`.'
   Reference:
     - 'https://github.com/rubocop/rubocop-rails/issues/260'
     - 'https://github.com/rails/rails/issues/25195'
@@ -248,9 +209,6 @@ Rails/ContentTag:
 
 Rails/CreateTableWithTimestamps:
   Enabled: true
-  Description: >-
-                  Checks the migration for which timestamps are not included
-                  when creating a new table.
   VersionAdded: '0.52'
   Include:
     - db/migrate/*.rb
@@ -261,9 +219,6 @@ Rails/CreateTableWithTimestamps:
 
 Rails/Date:
   Enabled: true
-  Description: >-
-                  Checks the correct usage of date aware methods,
-                  such as Date.today, Date.current etc.
   VersionAdded: '0.30'
   VersionChanged: '2.11'
   # The value `strict` disallows usage of `Date.today`, `Date.current`,
@@ -279,13 +234,11 @@ Rails/Date:
 
 Rails/DefaultScope:
   Enabled: false
-  Description: 'Avoid use of `default_scope`.'
   StyleGuide: 'https://rails.rubystyle.guide#avoid-default-scope'
   VersionAdded: '2.7'
 
 Rails/Delegate:
   Enabled: false
-  Description: 'Prefer delegate method for delegations.'
   VersionAdded: '0.21'
   VersionChanged: '0.50'
   # When set to true, using the target object as a prefix of the
@@ -295,12 +248,10 @@ Rails/Delegate:
 
 Rails/DelegateAllowBlank:
   Enabled: false
-  Description: 'Do not use allow_blank as an option to delegate.'
   VersionAdded: '0.44'
 
 Rails/DeprecatedActiveModelErrorsMethods:
   Enabled: false
-  Description: 'Avoid manipulating ActiveModel errors hash directly.'
   Severity: warning
   Safe: false
   VersionAdded: '2.14'
@@ -308,33 +259,28 @@ Rails/DeprecatedActiveModelErrorsMethods:
 
 Rails/DotSeparatedKeys:
   Enabled: false
-  Description: 'Enforces the use of dot-separated keys instead of `:scope` options in `I18n` translation methods.'
   StyleGuide: 'https://rails.rubystyle.guide/#dot-separated-keys'
   VersionAdded: '2.15'
 
 Rails/DuplicateAssociation:
   Enabled: false
-  Description: "Don't repeat associations in a model."
   Severity: warning
   VersionAdded: '2.14'
   VersionChanged: '2.18'
 
 Rails/DuplicateScope:
   Enabled: false
-  Description: 'Multiple scopes share this same where clause.'
   Severity: warning
   VersionAdded: '2.14'
   VersionChanged: '2.18'
 
 Rails/DurationArithmetic:
   Enabled: false
-  Description: 'Do not use duration as arithmetic operand with `Time.current`.'
   StyleGuide: 'https://rails.rubystyle.guide#duration-arithmetic'
   VersionAdded: '2.13'
 
 Rails/DynamicFindBy:
   Enabled: false
-  Description: 'Use `find_by` instead of dynamic `find_by_*`.'
   StyleGuide: 'https://rails.rubystyle.guide#find_by'
   Safe: false
   VersionAdded: '0.44'
@@ -352,13 +298,11 @@ Rails/DynamicFindBy:
 
 Rails/EagerEvaluationLogMessage:
   Enabled: false
-  Description: 'Checks that blocks are used for interpolated strings passed to `Rails.logger.debug`.'
   Reference: 'https://guides.rubyonrails.org/debugging_rails_applications.html#impact-of-logs-on-performance'
   VersionAdded: '2.11'
 
 Rails/EnumHash:
   Enabled: false
-  Description: 'Prefer hash syntax over array syntax when defining enums.'
   StyleGuide: 'https://rails.rubystyle.guide#enums'
   VersionAdded: '2.3'
   Include:
@@ -366,19 +310,16 @@ Rails/EnumHash:
 
 Rails/EnumUniqueness:
   Enabled: false
-  Description: 'Avoid duplicate integers in hash-syntax `enum` declaration.'
   VersionAdded: '0.46'
   Include:
     - app/models/**/*.rb
 
 Rails/EnvironmentComparison:
   Enabled: false
-  Description: "Favor `Rails.env.production?` over `Rails.env == 'production'`."
   VersionAdded: '0.52'
 
 Rails/EnvironmentVariableAccess:
   Enabled: true
-  Description: 'Do not access `ENV` directly after initialization.'
   # TODO: Set to `pending` status in RuboCop Rails 2 series when migration doc will be written.
   VersionAdded: '2.10'
   VersionChanged: '2.11'
@@ -392,10 +333,6 @@ Rails/EnvironmentVariableAccess:
 
 Rails/Exit:
   Enabled: false
-  Description: >-
-                  Favor `fail`, `break`, `return`, etc. over `exit` in
-                  application or library code outside of Rake files to avoid
-                  exits during unit testing or running in production.
   VersionAdded: '0.41'
   Include:
     - app/**/*.rb
@@ -406,13 +343,11 @@ Rails/Exit:
 
 Rails/ExpandedDateRange:
   Enabled: false
-  Description: 'Checks for expanded date range.'
   StyleGuide: 'https://rails.rubystyle.guide/#date-time-range'
   VersionAdded: '2.11'
 
 Rails/FilePath:
   Enabled: false
-  Description: 'Use `Rails.root.join` for file path joining.'
   VersionAdded: '0.47'
   VersionChanged: '2.4'
   EnforcedStyle: slashes
@@ -422,7 +357,6 @@ Rails/FilePath:
 
 Rails/FindBy:
   Enabled: false
-  Description: 'Prefer find_by over where.first.'
   StyleGuide: 'https://rails.rubystyle.guide#find_by'
   VersionAdded: '0.30'
   VersionChanged: '2.11'
@@ -432,7 +366,6 @@ Rails/FindBy:
 
 Rails/FindById:
   Enabled: false
-  Description: >-
                 Favor the use of `find` over `where.take!`, `find_by!`, and `find_by_id!` when you
                 need to retrieve a single record by primary key when you expect it to be found.
   StyleGuide: 'https://rails.rubystyle.guide/#find'
@@ -440,7 +373,6 @@ Rails/FindById:
 
 Rails/FindEach:
   Enabled: false
-  Description: 'Prefer all.find_each over all.each.'
   StyleGuide: 'https://rails.rubystyle.guide#find-each'
   Safe: false
   VersionAdded: '0.30'
@@ -457,14 +389,12 @@ Rails/FindEach:
 
 Rails/FreezeTime:
   Enabled: false
-  Description: 'Prefer `freeze_time` over `travel_to` with an argument of the current time.'
   StyleGuide: 'https://rails.rubystyle.guide/#freeze-time'
   VersionAdded: '2.16'
   SafeAutoCorrect: false
 
 Rails/HasAndBelongsToMany:
   Enabled: false
-  Description: 'Prefer has_many :through to has_and_belongs_to_many.'
   StyleGuide: 'https://rails.rubystyle.guide#has-many-through'
   VersionAdded: '0.12'
   Include:
@@ -472,7 +402,6 @@ Rails/HasAndBelongsToMany:
 
 Rails/HasManyOrHasOneDependent:
   Enabled: false
-  Description: 'Define the dependent option to the has_many and has_one associations.'
   StyleGuide: 'https://rails.rubystyle.guide#has_many-has_one-dependent-option'
   VersionAdded: '0.50'
   Include:
@@ -480,14 +409,12 @@ Rails/HasManyOrHasOneDependent:
 
 Rails/HelperInstanceVariable:
   Enabled: false
-  Description: 'Do not use instance variables in helpers.'
   VersionAdded: '2.0'
   Include:
     - app/helpers/**/*.rb
 
 Rails/HttpPositionalArguments:
   Enabled: false
-  Description: 'Use keyword arguments instead of positional arguments in http method calls.'
   VersionAdded: '0.44'
   Include:
     - 'spec/**/*'
@@ -495,7 +422,6 @@ Rails/HttpPositionalArguments:
 
 Rails/HttpStatus:
   Enabled: false
-  Description: 'Enforces use of symbolic or numeric value to define HTTP status.'
   VersionAdded: '0.54'
   VersionChanged: '2.11'
   EnforcedStyle: symbolic
@@ -505,7 +431,6 @@ Rails/HttpStatus:
 
 Rails/I18nLazyLookup:
   Enabled: false
-  Description: 'Checks for places where I18n "lazy" lookup can be used.'
   StyleGuide: 'https://rails.rubystyle.guide/#lazy-lookup'
   Reference: 'https://guides.rubyonrails.org/i18n.html#lazy-lookup'
   VersionAdded: '2.14'
@@ -514,7 +439,6 @@ Rails/I18nLazyLookup:
 
 Rails/I18nLocaleAssignment:
   Enabled: false
-  Description: 'Prefer the usage of `I18n.with_locale` instead of manually updating `I18n.locale` value.'
   VersionAdded: '2.11'
   Include:
     - spec/**/*.rb
@@ -522,20 +446,17 @@ Rails/I18nLocaleAssignment:
 
 Rails/I18nLocaleTexts:
   Enabled: false
-  Description: 'Enforces use of I18n and locale files instead of locale specific strings.'
   StyleGuide: 'https://rails.rubystyle.guide/#locale-texts'
   VersionAdded: '2.14'
 
 Rails/IgnoredColumnsAssignment:
   Enabled: false
-  Description: 'Looks for assignments of `ignored_columns` that override previous assignments.'
   StyleGuide: 'https://rails.rubystyle.guide/#append-ignored-columns'
   SafeAutoCorrect: false
   VersionAdded: '2.17'
 
 Rails/IgnoredSkipActionFilterOption:
   Enabled: false
-  Description: 'Checks that `if` and `only` (or `except`) are not used together as options of `skip_*` action filter.'
   Reference: 'https://api.rubyonrails.org/classes/AbstractController/Callbacks/ClassMethods.html#method-i-_normalize_callback_options'
   VersionAdded: '0.63'
   Include:
@@ -544,25 +465,21 @@ Rails/IgnoredSkipActionFilterOption:
 
 Rails/IndexBy:
   Enabled: false
-  Description: 'Prefer `index_by` over `each_with_object`, `to_h`, or `map`.'
   VersionAdded: '2.5'
   VersionChanged: '2.8'
 
 Rails/IndexWith:
   Enabled: false
-  Description: 'Prefer `index_with` over `each_with_object`, `to_h`, or `map`.'
   VersionAdded: '2.5'
   VersionChanged: '2.8'
 
 Rails/Inquiry:
   Enabled: false
-  Description: "Prefer Ruby's comparison operators over Active Support's `Array#inquiry` and `String#inquiry`."
   StyleGuide: 'https://rails.rubystyle.guide/#inquiry'
   VersionAdded: '2.7'
 
 Rails/InverseOf:
   Enabled: false
-  Description: 'Checks for associations where the inverse cannot be determined automatically.'
   Reference:
     - https://guides.rubyonrails.org/association_basics.html#bi-directional-associations
     - https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#module-ActiveRecord::Associations::ClassMethods-label-Setting+Inverses
@@ -573,7 +490,6 @@ Rails/InverseOf:
 
 Rails/LexicallyScopedActionFilter:
   Enabled: false
-  Description: "Checks that methods specified in the filter's `only` or `except` options are explicitly defined in the class."
   StyleGuide: 'https://rails.rubystyle.guide#lexically-scoped-action-filter'
   Safe: false
   VersionAdded: '0.52'
@@ -583,7 +499,6 @@ Rails/LexicallyScopedActionFilter:
 
 Rails/LinkToBlank:
   Enabled: false
-  Description: 'Checks that `link_to` with a `target: "_blank"` have a `rel: "noopener"` option passed to them.'
   Reference:
     - https://mathiasbynens.github.io/rel-noopener/
     - https://html.spec.whatwg.org/multipage/links.html#link-type-noopener
@@ -592,7 +507,6 @@ Rails/LinkToBlank:
 
 Rails/MailerName:
   Enabled: false
-  Description: 'Mailer should end with `Mailer` suffix.'
   StyleGuide: 'https://rails.rubystyle.guide/#mailer-name'
   SafeAutoCorrect: false
   VersionAdded: '2.7'
@@ -601,9 +515,6 @@ Rails/MailerName:
 
 Rails/MatchRoute:
   Enabled: false
-  Description: >-
-                  Don't use `match` to define any routes unless there is a need to map multiple request types
-                  among [:get, :post, :patch, :put, :delete] to a single action using the `:via` option.
   StyleGuide: 'https://rails.rubystyle.guide/#no-match-routes'
   VersionAdded: '2.7'
   Include:
@@ -612,14 +523,12 @@ Rails/MatchRoute:
 
 Rails/MigrationClassName:
   Enabled: false
-  Description: 'The class name of the migration should match its file name.'
   VersionAdded: '2.14'
   Include:
     - db/migrate/*.rb
 
 Rails/NegateInclude:
   Enabled: false
-  Description: 'Prefer `collection.exclude?(obj)` over `!collection.include?(obj)`.'
   StyleGuide: 'https://rails.rubystyle.guide#exclude'
   Safe: false
   VersionAdded: '2.7'
@@ -627,22 +536,17 @@ Rails/NegateInclude:
 
 Rails/NotNullColumn:
   Enabled: false
-  Description: 'Do not add a NOT NULL column without a default value.'
   VersionAdded: '0.43'
   Include:
     - db/migrate/*.rb
 
 Rails/OrderById:
   Enabled: false
-  Description: >-
-                  Do not use the `id` column for ordering.
-                  Use a timestamp column to order chronologically.
   StyleGuide: 'https://rails.rubystyle.guide/#order-by-id'
   VersionAdded: '2.8'
 
 Rails/Output:
   Enabled: false
-  Description: 'Checks for calls to puts, print, etc.'
   SafeAutoCorrect: false
   VersionAdded: '0.15'
   VersionChanged: '0.19'
@@ -654,19 +558,16 @@ Rails/Output:
 
 Rails/OutputSafety:
   Enabled: false
-  Description: 'The use of `html_safe` or `raw` may be a security risk.'
   VersionAdded: '0.41'
 
 Rails/Pick:
   Enabled: false
-  Description: 'Prefer `pick` over `pluck(...).first`.'
   StyleGuide: 'https://rails.rubystyle.guide#pick'
   Safe: false
   VersionAdded: '2.6'
 
 Rails/Pluck:
   Enabled: false
-  Description: 'Prefer `pluck` over `map { ... }`.'
   StyleGuide: 'https://rails.rubystyle.guide#pluck'
   Safe: false
   VersionAdded: '2.7'
@@ -674,14 +575,12 @@ Rails/Pluck:
 
 Rails/PluckId:
   Enabled: false
-  Description: 'Use `ids` instead of `pluck(:id)` or `pluck(primary_key)`.'
   StyleGuide: 'https://rails.rubystyle.guide/#ids'
   Safe: false
   VersionAdded: '2.7'
 
 Rails/PluckInWhere:
   Enabled: false
-  Description: 'Use `select` instead of `pluck` in `where` query methods.'
   Safe: false
   VersionAdded: '2.7'
   VersionChanged: '2.8'
@@ -692,17 +591,14 @@ Rails/PluckInWhere:
 
 Rails/PluralizationGrammar:
   Enabled: false
-  Description: 'Checks for incorrect grammar when using methods like `3.day.ago`.'
   VersionAdded: '0.35'
 
 Rails/Presence:
   Enabled: false
-  Description: 'Checks code that can be written more easily using `Object#presence` defined by Active Support.'
   VersionAdded: '0.52'
 
 Rails/Present:
   Enabled: false
-  Description: 'Enforces use of `present?`.'
   VersionAdded: '0.48'
   VersionChanged: '0.67'
   # Convert usages of `!nil? && !empty?` to `present?`
@@ -714,7 +610,6 @@ Rails/Present:
 
 Rails/RakeEnvironment:
   Enabled: false
-  Description: 'Include `:environment` as a dependency for all Rake tasks.'
   Safe: false
   VersionAdded: '2.4'
   VersionChanged: '2.6'
@@ -726,7 +621,6 @@ Rails/RakeEnvironment:
 
 Rails/ReadWriteAttribute:
   Enabled: false
-  Description: >-
                  Checks for read_attribute(:attr) and
                  write_attribute(:attr, val).
   StyleGuide: 'https://rails.rubystyle.guide#read-attribute'
@@ -737,7 +631,6 @@ Rails/ReadWriteAttribute:
 
 Rails/RedundantAllowNil:
   Enabled: false
-  Description: >-
                  Finds redundant use of `allow_nil` when `allow_blank` is set to
                  certain values in model validations.
   VersionAdded: '0.67'
@@ -746,23 +639,19 @@ Rails/RedundantAllowNil:
 
 Rails/RedundantForeignKey:
   Enabled: false
-  Description: 'Checks for associations where the `:foreign_key` option is redundant.'
   VersionAdded: '2.6'
 
 Rails/RedundantPresenceValidationOnBelongsTo:
   Enabled: true
-  Description: 'Checks for redundant presence validation on belongs_to association.'
   SafeAutoCorrect: false
   VersionAdded: '2.13'
 
 Rails/RedundantReceiverInWithOptions:
   Enabled: false
-  Description: 'Checks for redundant receiver in `with_options`.'
   VersionAdded: '0.52'
 
 Rails/RedundantTravelBack:
   Enabled: false
-  Description: Checks for redundant `travel_back` calls.
   VersionAdded: '2.12'
   Include:
     - spec/**/*.rb
@@ -770,14 +659,12 @@ Rails/RedundantTravelBack:
 
 Rails/ReflectionClassName:
   Enabled: false
-  Description: 'Use a string for `class_name` option value in the definition of a reflection.'
   Safe: false
   VersionAdded: '0.64'
   VersionChanged: '2.10'
 
 Rails/RefuteMethods:
   Enabled: false
-  Description: 'Use `assert_not` methods instead of `refute` methods.'
   VersionAdded: '0.56'
   EnforcedStyle: assert_not
   SupportedStyles:
@@ -788,20 +675,17 @@ Rails/RefuteMethods:
 
 Rails/RelativeDateConstant:
   Enabled: false
-  Description: 'Do not assign relative date to constants.'
   SafeAutoCorrect: false
   VersionAdded: '0.48'
   VersionChanged: '2.13'
 
 Rails/RenderInline:
   Enabled: false
-  Description: 'Prefer using a template over inline rendering.'
   StyleGuide: 'https://rails.rubystyle.guide/#inline-rendering'
   VersionAdded: '2.7'
 
 Rails/RenderPlainText:
   Enabled: false
-  Description: 'Prefer `render plain:` over `render text:`.'
   StyleGuide: 'https://rails.rubystyle.guide/#plain-text-rendering'
   VersionAdded: '2.7'
   # Convert only when `content_type` is explicitly set to `text/plain`.
@@ -809,7 +693,6 @@ Rails/RenderPlainText:
 
 Rails/RequestReferer:
   Enabled: false
-  Description: 'Use consistent syntax for request.referer.'
   VersionAdded: '0.41'
   EnforcedStyle: referer
   SupportedStyles:
@@ -818,13 +701,11 @@ Rails/RequestReferer:
 
 Rails/RequireDependency:
   Enabled: false
-  Description: 'Do not use `require_dependency` when running in Zeitwerk mode. `require_dependency` is for autoloading in classic mode.'
   Reference: 'https://guides.rubyonrails.org/autoloading_and_reloading_constants.html'
   VersionAdded: '2.10'
 
 Rails/ResponseParsedBody:
   Enabled: false
-  Description: Prefer `response.parsed_body` to `JSON.parse(response.body)`.
   Safe: false
   VersionAdded: '2.18'
   VersionChanged: '2.19'
@@ -836,7 +717,6 @@ Rails/ResponseParsedBody:
 
 Rails/ReversibleMigration:
   Enabled: false
-  Description: 'Checks whether the change method of the migration file is reversible.'
   StyleGuide: 'https://rails.rubystyle.guide#reversible-migration'
   Reference: 'https://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html'
   VersionAdded: '0.47'
@@ -846,7 +726,6 @@ Rails/ReversibleMigration:
 
 Rails/ReversibleMigrationMethodDefinition:
   Enabled: false
-  Description: 'Checks whether the migration implements either a `change` method or both an `up` and a `down` method.'
   VersionAdded: '2.10'
   VersionChanged: '2.13'
   Include:
@@ -854,23 +733,19 @@ Rails/ReversibleMigrationMethodDefinition:
 
 Rails/RootJoinChain:
   Enabled: false
-  Description: 'Use a single `#join` instead of chaining on `Rails.root` or `Rails.public_path`.'
   VersionAdded: '2.13'
 
 Rails/RootPathnameMethods:
   Enabled: false
-  Description: 'Use `Rails.root` IO methods instead of passing it to `File`.'
   SafeAutoCorrect: false
   VersionAdded: '2.16'
 
 Rails/RootPublicPath:
   Enabled: false
-  Description: "Favor `Rails.public_path` over `Rails.root` with `'public'`."
   VersionAdded: '2.15'
 
 Rails/SafeNavigation:
   Enabled: true
-  Description: "Use Ruby's safe navigation operator (`&.`) instead of `try!`."
   VersionAdded: '0.43'
   # This will convert usages of `try` to use safe navigation as well as `try!`.
   # `try` and `try!` work slightly differently. `try!` and safe navigation will
@@ -880,7 +755,6 @@ Rails/SafeNavigation:
 
 Rails/SafeNavigationWithBlank:
   Enabled: true
-  Description: 'Avoid `foo&.blank?` in conditionals.'
   VersionAdded: '2.4'
   # While the safe navigation operator is generally a good idea, when
   # checking `foo&.blank?` in a conditional, `foo` being `nil` will actually
@@ -892,7 +766,6 @@ Rails/SafeNavigationWithBlank:
 
 Rails/SaveBang:
   Enabled: false
-  Description: 'Identifies possible cases where Active Record save! or related should be used.'
   StyleGuide: 'https://rails.rubystyle.guide#save-bang'
   VersionAdded: '0.42'
   VersionChanged: '0.59'
@@ -902,14 +775,12 @@ Rails/SaveBang:
 
 Rails/SchemaComment:
   Enabled: false
-  Description: >-
     Enforces the use of the `comment` option when adding a new table or column
     to the database during a migration.
   VersionAdded: '2.13'
 
 Rails/ScopeArgs:
   Enabled: true
-  Description: 'Checks the arguments of ActiveRecord scopes.'
   VersionAdded: '0.19'
   VersionChanged: '2.12'
   Include:
@@ -917,7 +788,6 @@ Rails/ScopeArgs:
 
 Rails/ShortI18n:
   Enabled: false
-  Description: 'Use the short form of the I18n methods: `t` instead of `translate` and `l` instead of `localize`.'
   StyleGuide: 'https://rails.rubystyle.guide/#short-i18n'
   VersionAdded: '2.7'
   EnforcedStyle: conservative
@@ -927,7 +797,6 @@ Rails/ShortI18n:
 
 Rails/SkipsModelValidations:
   Enabled: false
-  Description: >-
                  Use methods that skips model validations with caution.
                  See reference for more information.
   Reference: 'https://guides.rubyonrails.org/active_record_validations.html#skipping-validations'
@@ -956,7 +825,6 @@ Rails/SkipsModelValidations:
 
 Rails/SquishedSQLHeredocs:
   Enabled: false
-  Description: 'Checks SQL heredocs to use `.squish`.'
   StyleGuide: 'https://rails.rubystyle.guide/#squished-heredocs'
   VersionAdded: '2.8'
   VersionChanged: '2.9'
@@ -966,13 +834,11 @@ Rails/SquishedSQLHeredocs:
 
 Rails/StripHeredoc:
   Enabled: true
-  Description: 'Enforces the use of squiggly heredoc over `strip_heredoc`.'
   StyleGuide: 'https://rails.rubystyle.guide/#prefer-squiggly-heredoc'
   VersionAdded: '2.15'
 
 Rails/TableNameAssignment:
   Enabled: false
-  Description: >-
     Do not use `self.table_name =`. Use Inflections or `table_name_prefix` instead.
   StyleGuide: 'https://rails.rubystyle.guide/#keep-ar-defaults'
   VersionAdded: '2.14'
@@ -981,7 +847,6 @@ Rails/TableNameAssignment:
 
 Rails/ThreeStateBooleanColumn:
   Enabled: true
-  Description: 'Add a default value and a `NOT NULL` constraint to boolean columns.'
   StyleGuide: 'https://rails.rubystyle.guide/#three-state-boolean'
   VersionAdded: '2.19'
   Include:
@@ -989,7 +854,6 @@ Rails/ThreeStateBooleanColumn:
 
 Rails/TimeZone:
   Enabled: false
-  Description: 'Checks the correct usage of time zone aware methods.'
   StyleGuide: 'https://rails.rubystyle.guide#time'
   Reference: 'http://danilenko.org/2012/7/6/rails_timezones'
   SafeAutoCorrect: false
@@ -1006,7 +870,6 @@ Rails/TimeZone:
 
 Rails/TimeZoneAssignment:
   Enabled: true
-  Description: 'Prefer the usage of `Time.use_zone` instead of manually updating `Time.zone` value.'
   Reference: 'https://thoughtbot.com/blog/its-about-time-zones'
   VersionAdded: '2.10'
   Include:
@@ -1015,7 +878,6 @@ Rails/TimeZoneAssignment:
 
 Rails/ToFormattedS:
   Enabled: false
-  Description: 'Checks for consistent uses of `to_fs` or `to_formatted_s`.'
   StyleGuide: 'https://rails.rubystyle.guide/#prefer-to-fs'
   EnforcedStyle: to_fs
   SupportedStyles:
@@ -1025,13 +887,11 @@ Rails/ToFormattedS:
 
 Rails/ToSWithArgument:
   Enabled: false
-  Description: 'Identifies passing any argument to `#to_s`.'
   Safe: false
   VersionAdded: '2.16'
 
 Rails/TopLevelHashWithIndifferentAccess:
   Enabled: false
-  Description: 'Identifies top-level `HashWithIndifferentAccess`.'
   Reference: 'https://guides.rubyonrails.org/upgrading_ruby_on_rails.html#top-level-hashwithindifferentaccess-is-soft-deprecated'
   Severity: warning
   VersionAdded: '2.16'
@@ -1039,14 +899,12 @@ Rails/TopLevelHashWithIndifferentAccess:
 
 Rails/TransactionExitStatement:
   Enabled: false
-  Description: 'Avoid the usage of `return`, `break` and `throw` in transaction blocks.'
   Reference:
     - https://github.com/rails/rails/commit/15aa4200e083
   VersionAdded: '2.14'
 
 Rails/UniqBeforePluck:
   Enabled: true
-  Description: 'Prefer the use of uniq or distinct before pluck.'
   VersionAdded: '0.40'
   VersionChanged: '2.13'
   EnforcedStyle: conservative
@@ -1057,14 +915,12 @@ Rails/UniqBeforePluck:
 
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
-  Description: 'Uniqueness validation should have a unique index on the database column.'
   VersionAdded: '2.5'
   Include:
     - app/models/**/*.rb
 
 Rails/UnknownEnv:
   Enabled: false
-  Description: 'Use correct environment name.'
   Severity: warning
   VersionAdded: '0.51'
   VersionChanged: '2.18'
@@ -1075,14 +931,12 @@ Rails/UnknownEnv:
 
 Rails/UnusedIgnoredColumns:
   Enabled: true
-  Description: 'Remove a column that does not exist from `ignored_columns`.'
   VersionAdded: '2.11'
   Include:
     - app/models/**/*.rb
 
 Rails/Validation:
   Enabled: false
-  Description: 'Use validates :attribute, hash of validations.'
   VersionAdded: '0.9'
   VersionChanged: '0.41'
   Include:
@@ -1090,7 +944,6 @@ Rails/Validation:
 
 Rails/WhereEquals:
   Enabled: false
-  Description: 'Pass conditions to `where` as a hash instead of manually constructing SQL.'
   StyleGuide: 'https://rails.rubystyle.guide/#hash-conditions'
   SafeAutoCorrect: false
   VersionAdded: '2.9'
@@ -1098,7 +951,6 @@ Rails/WhereEquals:
 
 Rails/WhereExists:
   Enabled: false
-  Description: 'Prefer `exists?(...)` over `where(...).exists?`.'
   SafeAutoCorrect: false
   EnforcedStyle: exists
   SupportedStyles:
@@ -1109,19 +961,16 @@ Rails/WhereExists:
 
 Rails/WhereMissing:
   Enabled: true
-  Description: 'Use `where.missing(...)` to find missing relationship records.'
   StyleGuide: 'https://rails.rubystyle.guide/#finding-missing-relationship-records'
   VersionAdded: '2.16'
 
 Rails/WhereNot:
   Enabled: true
-  Description: 'Use `where.not(...)` instead of manually constructing negated SQL in `where`.'
   StyleGuide: 'https://rails.rubystyle.guide/#hash-conditions'
   VersionAdded: '2.8'
 
 Rails/WhereNotWithMultipleConditions:
   Enabled: false
-  Description: 'Do not use `where.not(...)` with multiple conditions.'
   StyleGuide: 'https://rails.rubystyle.guide/#where-not-with-multiple-attributes'
   Severity: warning
   VersionAdded: '2.17'
