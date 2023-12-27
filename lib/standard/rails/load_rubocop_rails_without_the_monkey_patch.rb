@@ -7,7 +7,7 @@
 # of RuboCop built-in cops in this file, we need to monitor it for changes
 # in rubocop-rails and keep it up to date.
 #
-# Last updated from rubocop-rails v2.20.2
+# Last updated from rubocop-rails v2.23.1
 
 # frozen_string_literal: true
 
@@ -28,6 +28,14 @@ require require_path.join("rubocop/rails/schema_loader/schema")
 require require_path.join("rubocop/cop/rails_cops")
 
 RuboCop::Cop::Style::HashExcept.minimum_target_ruby_version(2.0)
+
+RuboCop::Cop::Style::InverseMethods.singleton_class.prepend(
+  Module.new do
+    def autocorrect_incompatible_with
+      super.push(RuboCop::Cop::Rails::NegateInclude)
+    end
+  end
+)
 
 RuboCop::Cop::Style::MethodCallWithArgsParentheses.singleton_class.prepend(
   Module.new do

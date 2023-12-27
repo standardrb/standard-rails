@@ -28,6 +28,17 @@ AllCops:
 Lint/RedundantSafeNavigation:
   Enabled: false
 
+Lint/SafeNavigationChain:
+  Enabled: true
+  AllowedMethods:
+    - present?
+    - blank?
+    - presence
+    - presence_in
+    - try
+    - try!
+    - in?
+
 Rails/ActionControllerFlashBeforeRender:
   Enabled: false
 
@@ -100,6 +111,9 @@ Rails/ContentTag:
 Rails/CreateTableWithTimestamps:
   Enabled: true
 
+Rails/DangerousColumnNames:
+  Enabled: true
+
 Rails/Date:
   Enabled: true
 
@@ -138,6 +152,9 @@ Rails/EnumHash:
   Enabled: true
 
 Rails/EnumUniqueness:
+  Enabled: true
+
+Rails/EnvLocal:
   Enabled: true
 
 Rails/EnvironmentComparison:
@@ -266,6 +283,9 @@ Rails/RakeEnvironment:
 Rails/ReadWriteAttribute:
   Enabled: true
 
+Rails/RedundantActiveRecordAllMethod:
+  Enabled: false
+
 Rails/RedundantAllowNil:
   Enabled: true
 
@@ -335,6 +355,9 @@ Rails/SchemaComment:
 Rails/ScopeArgs:
   Enabled: true
 
+Rails/SelectMap:
+  Enabled: false
+
 Rails/ShortI18n:
   Enabled: false
 
@@ -387,6 +410,9 @@ Rails/UnknownEnv:
 Rails/UnusedIgnoredColumns:
   Enabled: true
 
+Rails/UnusedRenderContent:
+  Enabled: true
+
 Rails/Validation:
   Enabled: true
 
@@ -403,4 +429,7 @@ Rails/WhereNot:
   Enabled: true
 
 Rails/WhereNotWithMultipleConditions:
+  Enabled: false
+
+Style/InvertibleUnlessCondition:
   Enabled: false
