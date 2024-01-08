@@ -19,15 +19,6 @@ AllCops:
   # as the default.
   TargetRailsVersion: ~
 
-# This cop from rubocop was added to the Rubocop-Rails
-# config as part of this PR:
-# https://github.com/rubocop/rubocop-rails/pull/1014
-# in order to support some Rails-specific methods. At the
-# time of writing, it's disabled in Standard, so it's
-# disabled here.
-Lint/RedundantSafeNavigation:
-  Enabled: false
-
 Lint/SafeNavigationChain:
   Enabled: true
   AllowedMethods:
@@ -426,7 +417,4 @@ Rails/WhereNot:
   Enabled: true
 
 Rails/WhereNotWithMultipleConditions:
-  Enabled: false
-
-Style/InvertibleUnlessCondition:
   Enabled: false

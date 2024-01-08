@@ -27,7 +27,9 @@ module Standard
         LintRoller::Rules.new(
           type: :object,
           config_format: :rubocop,
-          value: rules_with_config_applied
+          value: without_extended_rule_configs(
+            rules_with_config_applied
+          )
         )
       end
 
@@ -42,6 +44,18 @@ module Standard
           end,
           YAML.load_file(Pathname.new(Gem.loaded_specs["rubocop-rails"].full_gem_path).join("config/default.yml"))
         )
+      end
+
+      # rubocop-rails adds additional options to a couple out-of-the-box cops
+      # but Standard (1) doesn't enable these to begin with and (2) doesn't
+      # allow rules' configs to be edited once they are defined, so we'll just
+      # remove them here
+      #
+      # See: https://github.com/standardrb/standard-rails/issues/25#issuecomment-1881127173
+      def without_extended_rule_configs(rules)
+        rules.reject { |(name,_)|
+          ["Style/InvertibleUnlessCondition", "Lint/SafeNavigationChain"].include?(name)
+        }.to_h
       end
 
       # This is not fantastic.
