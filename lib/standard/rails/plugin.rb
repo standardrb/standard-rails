@@ -53,7 +53,7 @@ module Standard
       #
       # See: https://github.com/standardrb/standard-rails/issues/25#issuecomment-1881127173
       def without_extended_rule_configs(rules)
-        rules.reject { |(name,_)|
+        rules.reject { |(name, _)|
           ["Style/InvertibleUnlessCondition", "Lint/SafeNavigationChain"].include?(name)
         }.to_h
       end
