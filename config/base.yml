@@ -134,7 +134,7 @@ Rails/DotSeparatedKeys:
 
 Rails/DuplicateAssociation:
   Enabled: true
-  Autocorrect: false
+  AutoCorrect: false
 
 Rails/DuplicateScope:
   Enabled: true
@@ -366,9 +366,6 @@ Rails/SkipsModelValidations:
 
 Rails/SquishedSQLHeredocs:
   Enabled: false
-
-Rails/StripHeredoc:
-  Enabled: true
 
 Rails/StripHeredoc:
   Enabled: true
