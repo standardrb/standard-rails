@@ -134,7 +134,7 @@ Rails/DurationArithmetic:
   Enabled: true
 
 Rails/DynamicFindBy:
-  Enabled: true
+  Enabled: false
 
 Rails/EagerEvaluationLogMessage:
   Enabled: true
