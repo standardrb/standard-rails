@@ -396,7 +396,7 @@ Rails/UnknownEnv:
   Enabled: false
 
 Rails/UnusedIgnoredColumns:
-  Enabled: true
+  Enabled: false
 
 Rails/UnusedRenderContent:
   Enabled: true
