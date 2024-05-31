@@ -37,7 +37,7 @@ Rails/ActionControllerTestCase:
   Enabled: false
 
 Rails/ActionFilter:
-  Enabled: true
+  Enabled: false
 
 Rails/ActionOrder:
   Enabled: false
