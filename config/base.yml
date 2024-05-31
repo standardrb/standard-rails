@@ -338,7 +338,7 @@ Rails/SafeNavigationWithBlank:
   Enabled: true
 
 Rails/SaveBang:
-  Enabled: true
+  Enabled: false
 
 Rails/SchemaComment:
   Enabled: false
