@@ -239,7 +239,7 @@ Rails/NotNullColumn:
   Enabled: false
 
 Rails/OrderById:
-  Enabled: true
+  Enabled: false
 
 Rails/Output:
   Enabled: true
