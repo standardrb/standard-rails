@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary = "A Standard plugin that adds Rails-specific rules to Standard"
   spec.homepage = "https://github.com/testdouble/standard-rails"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.7.0"
+  spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
