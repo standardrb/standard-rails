@@ -4,7 +4,7 @@
 
 ## [1.0.1]
 
-- Fix errors int he initial config [#24](https://github.com/standardrb/standard-rails/pull/24)
+- Fix errors in the initial config [#24](https://github.com/standardrb/standard-rails/pull/24)
 
 ## [1.0.0]
 
