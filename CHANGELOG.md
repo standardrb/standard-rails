@@ -1,3 +1,9 @@
+## [1.1.0]
+
+- Minimum Ruby version increased to 3.0
+- rubocop-rails upgraded to 2.25.x
+- Lots of rule cleanup
+
 ## [1.0.2]
 
 - Clear warnings about cops extended by rubocop-rails [#25](https://github.com/standardrb/standard-rails/issues/25)
