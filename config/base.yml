@@ -152,7 +152,7 @@ Rails/EnvironmentComparison:
   Enabled: true
 
 Rails/EnvironmentVariableAccess:
-  Enabled: true
+  Enabled: false
 
 Rails/Exit:
   Enabled: true
