@@ -36,6 +36,18 @@ plugins:
       target_rails_version: 7.0
 ```
 
+There is a good chance that you don't want to modify old migrations, but apply styles to new migrations only. This could be achieved with the following ignore configuration:
+
+```ruby
+ignore:
+  # Legacy migrations
+  - 'db/migrate/201*.rb'
+  - 'db/migrate/2020*.rb'
+  - 'db/migrate/2021*.rb'
+  - 'db/migrate/2022*.rb'
+  - 'db/migrate/2023*.rb'
+```
+
 ## Code of Conduct
 
 This project follows Test Double's [code of
