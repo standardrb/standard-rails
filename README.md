@@ -36,7 +36,9 @@ plugins:
       target_rails_version: 7.0
 ```
 
-There is a good chance that you don't want to modify old migrations, but apply styles to new migrations only. This could be achieved with the following ignore configuration:
+### Ignoring violations from old migrations
+
+Rails migrations are intended to be written as forward-compatible and subsequently unchanged, but they may contain Standard Ruby violations. Rather than apply fixes to those old migrations (and risk changing their behavior), you can ignore them in your `.standard.yml` like this:
 
 ```ruby
 ignore:
