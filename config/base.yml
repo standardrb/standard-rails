@@ -216,6 +216,7 @@ Rails/Inquiry:
 
 Rails/InverseOf:
   Enabled: true
+  IgnoreScopes: true
 
 Rails/LexicallyScopedActionFilter:
   Enabled: true
