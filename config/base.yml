@@ -179,7 +179,7 @@ Rails/HasAndBelongsToMany:
   Enabled: true
 
 Rails/HasManyOrHasOneDependent:
-  Enabled: true
+  Enabled: false
 
 Rails/HelperInstanceVariable:
   Enabled: true
