@@ -91,7 +91,7 @@ Rails/Blank:
   Enabled: true
 
 Rails/BulkChangeTable:
-  Enabled: true
+  Enabled: false
 
 Rails/CompactBlank:
   Enabled: true
