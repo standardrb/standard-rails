@@ -420,4 +420,4 @@ Rails/WhereNotWithMultipleConditions:
   Enabled: false
 
 Rails/WhereRange:
-  Enabled: true
+  Enabled: false
