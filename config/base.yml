@@ -77,7 +77,6 @@ Rails/ApplicationRecord:
   Exclude:
     - 'db/migrate/**/*'
 
-
 Rails/ArelStar:
   Enabled: true
 

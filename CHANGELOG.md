@@ -1,3 +1,15 @@
+## [1.2.0]
+
+- Update to [rubocop-rails@2.26.0](https://github.com/rubocop/rubocop-rails/blob/master/CHANGELOG.md#2260-2024-08-24)
+- Enable new [Rails/EnumSyntax](https://github.com/rubocop/rubocop-rails/blob/master/docs/modules/ROOT/pages/cops_rails.adoc#railsenumsyntax)
+- Exclude [Rails/ApplicationModel](/commit/94029ecc04635bdcda9c54bfcca27f6f9656205d) from migrations
+- Disable [Rails/HelperInstanceVariable](https://github.com/rubocop/rubocop-rails/blob/master/docs/modules/ROOT/pages/cops_rails.adoc#railshelperinstancevariable)
+- Disable [Rails/WhereRange](https://github.com/standardrb/standard-rails/pull/57)
+- Disable [Rails/BulkChangeTable](https://github.com/standardrb/standard-rails/pull/55)
+- Disable [Rails/InverseOf](https://github.com/standardrb/standard-rails/pull/54)
+- Disable [Rails/HasManyOrHasOneDependent](https://github.com/standardrb/standard-rails/pull/53)
+- Disable [Rails/EnvironmentVariableAccess](https://github.com/standardrb/standard-rails/pull/47)
+
 ## [1.1.0]
 
 - Minimum Ruby version increased to 3.0
