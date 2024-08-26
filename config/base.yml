@@ -185,7 +185,7 @@ Rails/HasManyOrHasOneDependent:
   Enabled: false
 
 Rails/HelperInstanceVariable:
-  Enabled: true
+  Enabled: false
 
 Rails/HttpPositionalArguments:
   Enabled: true
