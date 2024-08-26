@@ -74,6 +74,9 @@ Rails/ApplicationMailer:
 
 Rails/ApplicationRecord:
   Enabled: true
+  Exclude:
+    - 'db/migrate/**/*'
+
 
 Rails/ArelStar:
   Enabled: true
