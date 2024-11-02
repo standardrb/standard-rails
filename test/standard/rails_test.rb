@@ -16,10 +16,17 @@ class Standard::RailsTest < Minitest::Test
     VersionAdded
     VersionChanged
   ].freeze
+  REMOVED_COPS = %w[
+    Lint/NumberConversion
+    Lint/RedundantSafeNavigation
+    Style/AndOr
+    Style/CollectionCompact
+    Style/FormatStringToken
+    Style/InvertibleUnlessCondition
+    Style/SymbolProc
+  ]
   def test_configures_all_rails_cops
-    expected = YAML.load_file(Pathname.new(Gem.loaded_specs["rubocop-rails"].full_gem_path).join("config/default.yml")).reject { |name, cop|
-      ["Lint/NumberConversion", "Style/AndOr", "Style/FormatStringToken", "Style/SymbolProc", "Lint/RedundantSafeNavigation", "Style/InvertibleUnlessCondition", "Style/CollectionCompact"].include?(name)
-    }.to_h
+    expected = YAML.load_file(Pathname.new(Gem.loaded_specs["rubocop-rails"].full_gem_path).join("config/default.yml")).except(*REMOVED_COPS).to_h
     actual = YAML.load_file(BASE_CONFIG)
     missing = (expected.keys - actual.keys).grep(/\//) # ignore groups like "Layout"
     extra = actual.keys - expected.keys - ["require"]
