@@ -1,3 +1,14 @@
+## [unreleased]
+
+- Update Gems
+    - regexp_parser@2.10.0
+    - rubocop-ast@1.40.0
+    - rubocop@1.73.2
+    - rubocop-performance@1.24.0
+    - standard-performance@1.7.0
+    - standard@1.47.0
+- add Ruby 3.4 to Github Action Runner
+
 ## [1.2.0]
 
 - Update to [rubocop-rails@2.26.0](https://github.com/rubocop/rubocop-rails/blob/master/CHANGELOG.md#2260-2024-08-24)
