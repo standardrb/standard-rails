@@ -31,7 +31,7 @@ Lint/SafeNavigationChain:
     - in?
 
 Lint/UselessAccessModifier:
-  Enabled: true
+  Enabled: false
 
 Rails/ActionControllerFlashBeforeRender:
   Enabled: false
@@ -373,7 +373,7 @@ Rails/StripHeredoc:
   Enabled: true
 
 Rails/StrongParametersExpect:
-  Enabled: true
+  Enabled: false
 
 Rails/TableNameAssignment:
   Enabled: false
