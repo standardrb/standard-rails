@@ -30,6 +30,9 @@ Lint/SafeNavigationChain:
     - try!
     - in?
 
+Lint/UselessAccessModifier:
+  Enabled: false
+
 Rails/ActionControllerFlashBeforeRender:
   Enabled: false
 
@@ -237,6 +240,9 @@ Rails/MatchRoute:
 Rails/MigrationClassName:
   Enabled: true
 
+Rails/MultipleRoutePaths:
+  Enabled: true
+
 Rails/NegateInclude:
   Enabled: false
 
@@ -365,6 +371,9 @@ Rails/SquishedSQLHeredocs:
 
 Rails/StripHeredoc:
   Enabled: true
+
+Rails/StrongParametersExpect:
+  Enabled: false
 
 Rails/TableNameAssignment:
   Enabled: false

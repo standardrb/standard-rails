@@ -36,20 +36,6 @@ plugins:
       target_rails_version: 7.0
 ```
 
-### Ignoring violations from old migrations
-
-Rails migrations are intended to be written as forward-compatible and subsequently unchanged, but they may contain Standard Ruby violations. Rather than apply fixes to those old migrations (and risk changing their behavior), you can ignore them in your `.standard.yml` like this:
-
-```ruby
-ignore:
-  # Legacy migrations
-  - 'db/migrate/201*.rb'
-  - 'db/migrate/2020*.rb'
-  - 'db/migrate/2021*.rb'
-  - 'db/migrate/2022*.rb'
-  - 'db/migrate/2023*.rb'
-```
-
 ## Code of Conduct
 
 This project follows Test Double's [code of
