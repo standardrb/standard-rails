@@ -1,4 +1,4 @@
-## [unreleased]
+## [1.3.0]
 
 - Update Gems
     - regexp_parser@2.10.0
