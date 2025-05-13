@@ -7,14 +7,13 @@
 # of RuboCop built-in cops in this file, we need to monitor it for changes
 # in rubocop-rails and keep it up to date.
 #
-# Last updated from rubocop-rails v2.30.3
+# Last updated from rubocop-rails v2.31.0
 
 # frozen_string_literal: true
 
 require "rubocop"
 require "rack/utils"
 require "active_support/inflector"
-require "active_support/core_ext/object/blank"
 
 require_path = Pathname.new(Gem.loaded_specs["rubocop-rails"].full_require_paths.first)
 require require_path.join("rubocop/rails")
