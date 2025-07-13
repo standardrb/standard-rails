@@ -1,3 +1,7 @@
+## [1.4.0]
+
+- Update to [rubocop-rails@2.31.0](https://github.com/rubocop/rubocop-rails/releases/tag/v2.31.0)
+
 ## [1.3.0]
 
 - Update Gems
