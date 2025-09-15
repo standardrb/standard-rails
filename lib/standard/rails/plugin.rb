@@ -24,6 +24,11 @@ module Standard
       def rules(context)
         trick_rubocop_into_thinking_we_required_rubocop_rails!
 
+        # Mirror a rubocop-rails internal workaround to avoid "Warning: AllCops does not support..." output
+        without_warnings do
+          RuboCop::ConfigValidator.const_set(:COMMON_PARAMS, RuboCop::ConfigValidator::COMMON_PARAMS.dup << "MigratedSchemaVersion")
+        end
+
         LintRoller::Rules.new(
           type: :object,
           config_format: :rubocop,
@@ -54,7 +59,7 @@ module Standard
       # See: https://github.com/standardrb/standard-rails/issues/25#issuecomment-1881127173
       def without_extended_rule_configs(rules)
         rules.reject { |(name, _)|
-          ["Style/InvertibleUnlessCondition", "Lint/SafeNavigationChain"].include?(name)
+          ["Style/InvertibleUnlessCondition", "Lint/SafeNavigationChain", "Lint/UselessAccessModifier"].include?(name)
         }.to_h
       end
 
