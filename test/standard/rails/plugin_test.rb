@@ -12,5 +12,16 @@ module Standard::Rails
 
       assert_equal 5.2, result.value["AllCops"]["TargetRailsVersion"]
     end
+
+    def test_no_parameter_warnings_when_validating_config
+      subject = Plugin.new({})
+      rules = subject.rules(LintRoller::Context.new)
+
+      _out, err = capture_io do
+        RuboCop::Config.create(rules.value, "inline.yml", check: true)
+      end
+
+      assert_equal "", err
+    end
   end
 end

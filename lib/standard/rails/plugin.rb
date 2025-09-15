@@ -24,9 +24,9 @@ module Standard
       def rules(context)
         trick_rubocop_into_thinking_we_required_rubocop_rails!
 
-        # Mirror a rubocop-rails internal workaround to avoid "Warning: AllCops does not support..." output
+        # Workaround to avoid "Warning: AllCops does not support..." output
         without_warnings do
-          RuboCop::ConfigValidator.const_set(:COMMON_PARAMS, RuboCop::ConfigValidator::COMMON_PARAMS.dup << "MigratedSchemaVersion")
+          RuboCop::ConfigValidator.const_set :COMMON_PARAMS, updated_common_params
         end
 
         LintRoller::Rules.new(
@@ -39,6 +39,12 @@ module Standard
       end
 
       private
+
+      def updated_common_params
+        RuboCop::ConfigValidator::COMMON_PARAMS.dup.tap do |common|
+          %w[MigratedSchemaVersion TargetRailsVersion].each { |param| common << param }
+        end
+      end
 
       def rules_with_config_applied
         @merges_upstream_metadata.merge(
