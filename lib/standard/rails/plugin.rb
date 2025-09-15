@@ -27,9 +27,7 @@ module Standard
         LintRoller::Rules.new(
           type: :object,
           config_format: :rubocop,
-          value: without_extended_rule_configs(
-            rules_with_config_applied
-          )
+          value: sanitize_rules(rules_with_config_applied)
         )
       end
 
@@ -54,8 +52,29 @@ module Standard
       # See: https://github.com/standardrb/standard-rails/issues/25#issuecomment-1881127173
       def without_extended_rule_configs(rules)
         rules.reject { |(name, _)|
-          ["Style/InvertibleUnlessCondition", "Lint/SafeNavigationChain"].include?(name)
+          [
+            "Style/InvertibleUnlessCondition",
+            "Lint/SafeNavigationChain",
+            "Lint/UselessAccessModifier"
+          ].include?(name)
         }.to_h
+      end
+
+      # Normalize AllCops to avoid validator warnings without changing behavior:
+      # - MigratedSchemaVersion: rubocop-rails ships a UNIX-epoch default that
+      #   skips nothing; removing it is equivalent unless a real timestamp is provided.
+      # - TargetRailsVersion: Standard may pre-seed a nil to placate merging; deleting
+      #   only the nil value avoids a warning and lets RuboCop infer Rails version.
+      # See: https://github.com/standardrb/standard-rails/issues/72
+      def sanitize_rules(rules)
+        cleaned = without_extended_rule_configs(rules)
+        if cleaned["AllCops"].is_a?(Hash)
+          all_cops = cleaned["AllCops"].dup
+          all_cops.delete("MigratedSchemaVersion")
+          all_cops.delete("TargetRailsVersion") if all_cops.key?("TargetRailsVersion") && all_cops["TargetRailsVersion"].nil?
+          cleaned["AllCops"] = all_cops
+        end
+        cleaned
       end
 
       # This is not fantastic.
