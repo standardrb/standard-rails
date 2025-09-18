@@ -27,8 +27,10 @@ module Standard
         LintRoller::Rules.new(
           type: :object,
           config_format: :rubocop,
-          value: without_extended_rule_configs(
-            rules_with_config_applied
+          value: clean_rails_specific_parameters(
+            without_extended_rule_configs(
+              rules_with_config_applied
+            )
           )
         )
       end
@@ -56,6 +58,28 @@ module Standard
         rules.reject { |(name, _)|
           ["Style/InvertibleUnlessCondition", "Lint/SafeNavigationChain"].include?(name)
         }.to_h
+      end
+
+      # Clean up Rails-specific parameters that Standard doesn't support
+      # to prevent warnings about unsupported parameters
+      #
+      # See: https://github.com/standardrb/standard-rails/issues/72
+      def clean_rails_specific_parameters(rules)
+        rules = rules.dup
+
+        # Remove MigratedSchemaVersion from AllCops as it's Rails-specific
+        if rules["AllCops"]
+          rules["AllCops"] = rules["AllCops"].dup
+          rules["AllCops"].delete("MigratedSchemaVersion")
+        end
+
+        # Clean up Lint/UselessAccessModifier - since it's disabled in base.yml,
+        # we only need to keep the Enabled state and remove Rails-specific parameters
+        if rules["Lint/UselessAccessModifier"]
+          rules["Lint/UselessAccessModifier"] = {"Enabled" => false}
+        end
+
+        rules
       end
 
       # This is not fantastic.
