@@ -3,12 +3,12 @@ PATH
   specs:
     standard-rails (1.4.0)
       lint_roller (~> 1.0)
-      rubocop-rails (>= 2.31, < 2.33)
+      rubocop-rails (>= 2.31, < 2.34)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.1.5.1)
+    activesupport (7.1.5.2)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -22,16 +22,16 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0)
     ast (2.4.3)
-    base64 (0.2.0)
-    benchmark (0.4.0)
-    bigdecimal (3.1.9)
+    base64 (0.3.0)
+    benchmark (0.4.1)
+    bigdecimal (3.2.3)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.3)
+    connection_pool (2.5.4)
     docile (1.4.1)
-    drb (2.2.1)
+    drb (2.2.3)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    json (2.13.2)
+    json (2.15.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -47,7 +47,7 @@ GEM
       racc
     prism (1.5.1)
     racc (1.8.1)
-    rack (3.1.15)
+    rack (3.2.1)
     rainbow (3.1.1)
     rake (13.3.0)
     regexp_parser (2.11.3)
@@ -62,14 +62,14 @@ GEM
       rubocop-ast (>= 1.46.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.46.0)
+    rubocop-ast (1.47.1)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     rubocop-performance (1.25.0)
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.32.0)
+    rubocop-rails (2.33.4)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
