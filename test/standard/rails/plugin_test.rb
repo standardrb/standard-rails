@@ -29,6 +29,14 @@ module Standard::Rails
       assert_nil result.value["Lint/UselessAccessModifier"]
     end
 
+    def test_removes_useless_method_definition_block
+      subject = Plugin.new({})
+
+      result = subject.rules(LintRoller::Context.new)
+
+      assert_nil result.value["Lint/UselessMethodDefinition"]
+    end
+
     def test_no_parameter_warnings_when_validating_config
       subject = Plugin.new({})
       rules = subject.rules(LintRoller::Context.new)
