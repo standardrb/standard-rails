@@ -177,6 +177,9 @@ Rails/FindBy:
 Rails/FindById:
   Enabled: true
 
+Rails/FindByOrAssignmentMemoization:
+  Enabled: false
+
 Rails/FindEach:
   Enabled: true
 
