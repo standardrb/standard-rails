@@ -255,6 +255,9 @@ Rails/NegateInclude:
 Rails/NotNullColumn:
   Enabled: false
 
+Rails/OrderArguments:
+  Enabled: false
+
 Rails/OrderById:
   Enabled: false
 
