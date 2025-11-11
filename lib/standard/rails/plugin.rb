@@ -55,7 +55,8 @@ module Standard
           [
             "Style/InvertibleUnlessCondition",
             "Lint/SafeNavigationChain",
-            "Lint/UselessAccessModifier"
+            "Lint/UselessAccessModifier",
+            "Lint/UselessMethodDefinition"
           ].include?(name)
         }.to_h
       end

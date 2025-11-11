@@ -33,6 +33,9 @@ Lint/SafeNavigationChain:
 Lint/UselessAccessModifier:
   Enabled: false
 
+Lint/UselessMethodDefinition:
+  Enabled: false
+
 Rails/ActionControllerFlashBeforeRender:
   Enabled: false
 
