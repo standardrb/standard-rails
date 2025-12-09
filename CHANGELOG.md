@@ -1,3 +1,7 @@
+## [1.6.0]
+
+- Update Rubocop Rails to [v2.34](https://github.com/rubocop/rubocop-rails/releases/tag/v2.34.2)
+
 ## [1.5.0]
 
 - Update to [rubocop-rails@2.33.0](https://github.com/rubocop/rubocop-rails/releases/tag/v2.33.0)
