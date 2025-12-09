@@ -3,7 +3,7 @@ PATH
   specs:
     standard-rails (1.5.0)
       lint_roller (~> 1.0)
-      rubocop-rails (>= 2.33.4, < 2.35.0)
+      rubocop-rails (~> 2.34.0)
 
 GEM
   remote: https://rubygems.org/

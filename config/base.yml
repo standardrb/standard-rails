@@ -156,6 +156,9 @@ Rails/EnumSyntax:
 Rails/EnumUniqueness:
   Enabled: true
 
+Rails/Env:
+  Enabled: false
+
 Rails/EnvLocal:
   Enabled: true
 
@@ -203,6 +206,9 @@ Rails/HttpPositionalArguments:
 
 Rails/HttpStatus:
   Enabled: false
+
+Rails/HttpStatusNameConsistency:
+  Enabled: true
 
 Rails/I18nLazyLookup:
   Enabled: false
@@ -292,6 +298,9 @@ Rails/RakeEnvironment:
   Enabled: false
 
 Rails/ReadWriteAttribute:
+  Enabled: true
+
+Rails/RedirectBackOrTo:
   Enabled: true
 
 Rails/RedundantActiveRecordAllMethod:
