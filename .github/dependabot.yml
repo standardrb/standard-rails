@@ -5,7 +5,8 @@ version: 2
 updates:
   - package-ecosystem: bundler
     directory: "/"
-    schedule: { interval: weekly }
+    schedule: { interval: weekly, day: monday }
   - package-ecosystem: github-actions
     directory: "/"
-    schedule: { interval: weekly }
+    schedule: { interval: monthly }
+    cooldown: { default-days: 14 }
