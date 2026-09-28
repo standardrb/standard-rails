@@ -7,7 +7,7 @@
 # of RuboCop built-in cops in this file, we need to monitor it for changes
 # in rubocop-rails and keep it up to date.
 #
-# Last updated from rubocop-rails v2.34.2
+# Last updated from rubocop-rails v2.36.0
 
 # frozen_string_literal: true
 
@@ -24,7 +24,8 @@ require require_path.join("rubocop/rails/plugin")
 require require_path.join("rubocop/cop/rails_cops")
 
 require require_path.join("rubocop/rails/migration_file_skippable")
-RuboCop::Rails::MigrationFileSkippable.apply_to_cops!
+
+RuboCop::Cop::Base.prepend(RuboCop::Rails::MigrationFileSkippable)
 
 RuboCop::Cop::Style::HashExcept.minimum_target_ruby_version(2.0)
 
@@ -48,6 +49,14 @@ RuboCop::Cop::Style::RedundantSelf.singleton_class.prepend(
   Module.new do
     def autocorrect_incompatible_with
       super.push(RuboCop::Cop::Rails::SafeNavigation)
+    end
+  end
+)
+
+RuboCop::Cop::Style::TrailingCommaInArguments.singleton_class.prepend(
+  Module.new do
+    def autocorrect_incompatible_with
+      super.push(RuboCop::Cop::Rails::LinkToBlank)
     end
   end
 )
