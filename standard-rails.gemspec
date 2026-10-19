@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email = ["searls@gmail.com"]
 
   spec.summary = "A Standard plugin that adds Rails-specific rules to Standard"
-  spec.homepage = "https://github.com/testdouble/standard-rails"
+  spec.homepage = "https://github.com/standardrb/standard-rails"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 
